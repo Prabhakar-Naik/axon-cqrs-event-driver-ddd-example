@@ -4,7 +4,7 @@ To know more info about Axon-framework visit <a href="https://www.axoniq.io/" > 
 
 <hr/>
 <h3>To know about axon framework along with spring boot you must know these:</h3>
-# Axon Framework Basics
+# Axon Framework Basics <br/>
 CQRS (Command Query Responsibility Segregation): Axon Framework heavily relies on the CQRS pattern, where command operations (writes) are separated from query operations (reads).<br/>
 Event Sourcing: Axon uses Event Sourcing to persist the state of aggregates (entities). Instead of storing the current state, it stores a series of events that represent state changes over time.<br/>
 Domain-Driven Design (DDD): Axon encourages modeling your application’s domain using DDD concepts like Aggregates, Entities, and Value Objects.<br/>
