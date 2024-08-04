@@ -1,15 +1,20 @@
 # AxonIQ-cloud-console-server-spring-boot Example
 TODO on Axon-framework using CQRS DDD pattern Using axon server as well SQL RDBMS will implement cloud base AxonIQ console also soon.....<br/>
 
-download axon server from axoniq,
-start your axonserver java -jar axonserver.jar,
-then search on browser localhost:8024 on default axonserver port
-you can get interface like this.
+download axon server from axoniq,<br/>
+# start your axonserver java -jar axonserver.jar,<br/>
+then search on browser localhost:8024 on default axonserver port<br/>
+you can get interface like this.<br/><hr>
 <img src="./axonserver-pro/Screenshot 2024-08-04 144600.png" alt="err"/>
 
+# This is your Node Application
 <img src="./axonserver-pro/Screenshot 2024-08-04 144642.png" alt="err"/>
 
-<img src="./axonserver-pro/Screenshot 2024-08-04 144600.png" alt="err"/>
+# This is your profile data
+<img src="./axonserver-pro/Screenshot 2024-08-04 144701.png" alt="err"/>
+
+# This is your menu section briefly go through it.
+<img src="./axonserver-pro/Screenshot 2024-08-04 144701.png" alt="err"/>
 
 To know more info about Axon-framework visit <a href="https://www.axoniq.io/" > AxonIQ </a> 
 
