@@ -7,7 +7,7 @@ then search on browser localhost:8024 on default axonserver port
 you can get interface like this.
 <img src="./axonserver-pro/Screenshot 2024-08-04 144600.png" alt="err"/>
 
-<img src="./axonserver-pro/Screenshot 2024-08-04 144600.png" alt="err"/>
+<img src="./axonserver-pro/Screenshot 2024-08-04 144642.png" alt="err"/>
 
 <img src="./axonserver-pro/Screenshot 2024-08-04 144600.png" alt="err"/>
 
