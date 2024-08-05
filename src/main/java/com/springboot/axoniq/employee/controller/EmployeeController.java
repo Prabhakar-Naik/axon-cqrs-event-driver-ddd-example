@@ -1,9 +1,11 @@
 package com.springboot.axoniq.employee.controller;
 
-import com.springboot.axoniq.employee.commands.DeleteEmployeeCommand;
+import com.springboot.axoniq.configuration.ResponseWithError;
 import com.springboot.axoniq.employee.query.Employee;
 import com.springboot.axoniq.employee.service.EmployeeService;
 import com.springboot.axoniq.employee.util.EmployeeDto;
+import com.springboot.axoniq.util.AllPageResponse;
+import com.springboot.axoniq.util.PageRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +28,6 @@ public class EmployeeController {
     @PostMapping(value = "/create")
     public CompletableFuture<String> createEmployee(@RequestBody EmployeeDto employeeDto){
         var result = createEmployeeCommand(employeeDto);
-        //return CompletableFuture.completedFuture(result.getId());
         return service.createEmployee(result);
     }
 
@@ -53,4 +54,8 @@ public class EmployeeController {
     }
 
 
+    @PutMapping("/searchByNamePagination")
+    ResponseWithError<CompletableFuture<List<AllPageResponse>>> findBySearchString(@RequestBody PageRequestDto pageRequestDto){
+        return this.service.findBySearchString(pageRequestDto);
+    }
 }
