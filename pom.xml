@@ -29,7 +29,7 @@
 	<properties>
 		<java.version>17</java.version>
 		<axon.version>4.9.4</axon.version>
-		<console.version>1.4.1</console.version>
+		<console.version>1.7.0</console.version>
 	</properties>
 	<dependencies>
 		<dependency>

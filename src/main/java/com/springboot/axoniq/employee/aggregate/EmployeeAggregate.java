@@ -11,6 +11,7 @@ import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
+import org.springframework.core.annotation.AliasFor;
 
 /**
  * @author prabhakar, @Date 02-08-2024
@@ -26,6 +27,26 @@ public class EmployeeAggregate {
     private double salary;
 
     public EmployeeAggregate() {
+    }
+
+
+    public String getCode() {
+        return code;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+
+    public String getCompany() {
+        return company;
+    }
+
+
+    public double getSalary() {
+        return salary;
     }
 
 
@@ -83,7 +104,7 @@ public class EmployeeAggregate {
 
     @EventSourcingHandler
     public void deleteEmployee(EmployeeDeletedEvent event){
-
+        this.empId = event.getId();
     }
 
 

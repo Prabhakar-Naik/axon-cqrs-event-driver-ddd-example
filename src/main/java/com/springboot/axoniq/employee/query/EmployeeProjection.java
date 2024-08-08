@@ -1,6 +1,8 @@
 package com.springboot.axoniq.employee.query;
 
+import com.springboot.axoniq.employee.commands.DeleteEmployeeCommand;
 import com.springboot.axoniq.employee.events.EmployeeCreatedEvent;
+import com.springboot.axoniq.employee.events.EmployeeDeletedEvent;
 import com.springboot.axoniq.employee.events.EmployeeUpdatedEvent;
 import com.springboot.axoniq.util.AllPageResponse;
 import com.springboot.axoniq.util.PageRequestDto;
@@ -53,8 +55,8 @@ public class EmployeeProjection {
 
 
     @EventHandler
-    public void deleteEmployee(String id){
-        final var present = this.repository.findById(id);
+    public void deleteEmployee(EmployeeDeletedEvent event){
+        final var present = this.repository.findById(event.getId());
         present.ifPresent(employee -> this.repository.delete(employee));
 
     }
@@ -70,6 +72,7 @@ public class EmployeeProjection {
     public List<Employee> getAllEmployees(){
         return this.repository.findAll();
     }
+
 
     @QueryHandler(queryName = "searchByNamePagination")
     public AllPageResponse findByPagination(PageRequestDto pageRequestDto){

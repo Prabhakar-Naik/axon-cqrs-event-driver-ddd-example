@@ -14,8 +14,9 @@ import java.util.UUID;
  */
 public interface EmployeeRepository extends JpaRepository<Employee, String> {
 
-    @Query("select e from Employee e where e.name = :search or e.company = :search or e.code = :search")
-    Page<Employee> findBySearchString(@Param("search") String search, Pageable pageRequest);
+    @Query("SELECT e FROM Employee e WHERE e.name LIKE %?1% OR e.company LIKE %?1% OR e.code LIKE %?1%")
+    Page<Employee> findBySearchString(String search, Pageable pageRequest);
+
 
     @Query("select e from Employee e where e.code = :code")
     Optional<Employee> findByCode(@Param("code") String code);

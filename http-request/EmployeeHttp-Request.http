@@ -1,0 +1,47 @@
+###
+POST http://localhost:8080/employees/create
+Content-Type: application/json
+
+{
+  "code": "Emp23",
+  "name": "suresh",
+  "company": "Synycs",
+  "salary": 200000
+}
+
+
+###
+PUT http://localhost:8080/employees/updateEmployee
+Content-Type: application/json
+
+{
+  "id": "1a2476fc-033e-43cd-bc07-70da380e8e8f",
+  "code": "EMP8",
+  "name": "praveen",
+  "company": "TCS",
+  "salary": 100000
+}
+
+###
+GET http://localhost:8080/employees/getEmployee/1a2476fc-033e-43cd-bc07-70da380e8e8f
+
+
+###
+GET http://localhost:8080/employees/getAllEmployees
+
+
+
+###
+PUT http://localhost:8080/employees/searchByNamePagination
+Content-Type: application/json
+
+{
+  "page": 0,
+  "size": 4,
+  "sortColumns": ["code"],
+  "search": "syny"
+}
+
+
+###
+DELETE http://localhost:8080/employees/deleteEmployee/c0e38bbf-223a-4a49-a64b-a1f11f24834c
