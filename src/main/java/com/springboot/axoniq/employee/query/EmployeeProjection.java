@@ -49,8 +49,7 @@ public class EmployeeProjection {
             employee.get().setCompany(event.getCompany());
             employee.get().setSalary(event.getSalary());
             this.repository.save(employee.get());
-        }else
-            throw new IllegalArgumentException("Exception");
+        }
     }
 
 
