@@ -1,0 +1,9 @@
+2024-08-09 12:23:20.261542+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TOKEN_ENTRY" not found (this database is empty); SQL statement:
+update token_entry te1_0 set timestamp=? where te1_0.processor_name=? and te1_0.segment=? and te1_0.owner=? [42104-224]
+2024-08-09 12:23:20.452663+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TOKEN_ENTRY" not found (this database is empty); SQL statement:
+update token_entry te1_0 set owner=null where te1_0.owner=? and te1_0.processor_name=? and te1_0.segment=? [42104-224]
+2024-08-09 12:23:20.453627+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TOKEN_ENTRY" not found (this database is empty); SQL statement:
+update token_entry te1_0 set owner=null where te1_0.owner=? and te1_0.processor_name=? and te1_0.segment=? [42104-224]
