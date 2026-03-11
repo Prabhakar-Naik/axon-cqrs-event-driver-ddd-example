@@ -11,11 +11,13 @@ import com.springboot.axoniq.util.PageRequestDto;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 /**
  * @author prabhakar, @Date 02-08-2024
@@ -36,12 +38,12 @@ public class EmployeeService {
     }
 
 
-    public CompletableFuture<String> createEmployee(CreateEmployeeCommand command) {
+    public CompletableFuture<String> createEmployee(CreateEmployeeCommand command) throws ExecutionException, InterruptedException {
         commandGateway.send(command);
         return CompletableFuture.completedFuture(command.getId());
     }
 
-    public CompletableFuture<Employee> updateEmployee(UpdateEmployeeCommand command) {
+    public CompletableFuture<Employee> updateEmployee(@NotNull UpdateEmployeeCommand command) {
         if (this.repository.findById(command.getId()).isPresent()) {
             commandGateway.send(command);
             return CompletableFuture.completedFuture(new Employee(command.getId(),
@@ -51,7 +53,7 @@ public class EmployeeService {
         return CompletableFuture.completedFuture(new Employee());
     }
 
-    public CompletableFuture<String> deleteEmployee(DeleteEmployeeCommand command) {
+    public CompletableFuture<String> deleteEmployee(@NotNull DeleteEmployeeCommand command) {
         if (this.repository.findById(command.getId()).isPresent()) {
             commandGateway.send(command);
             return CompletableFuture.completedFuture("Employee deleted: " + command.getId());
